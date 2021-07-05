@@ -39,8 +39,6 @@ wx/image.h
 -
 string
 -
-memory
--
 chatbot.h
 /home/savyasachi/Programming/Udacity/C++Nanodegree/CppND-Memory-Management-Chatbot/src/chatbot.h
 chatlogic.h
