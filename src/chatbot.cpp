@@ -45,6 +45,75 @@ ChatBot::~ChatBot()
 //// STUDENT CODE
 ////
 
+//Copy constructor
+ChatBot::ChatBot(const ChatBot &source)
+{
+    std::cout << "ChatBot Copy Constructor\n";
+    
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+    _image = new wxBitmap();
+    *_image = *source._image;
+
+}
+
+// //Copy assignment operator
+const ChatBot& ChatBot::operator=(const ChatBot &source)
+{
+    std::cout << "ChatBot Copy Assignment Operator\n";
+
+    if (this == &source)
+        return *this;
+
+    delete _image;    
+    _image = new wxBitmap();
+    _image = source._image;
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+    return *this;
+}
+
+//Move constructor
+ChatBot::ChatBot(ChatBot &&source)
+{
+    std::cout << "ChatBot Move Constructor\n";
+    
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+    _image = new wxBitmap();
+    _image = source._image;
+
+    // Set to nullptr so the source data is unusable
+    source._chatLogic = nullptr;
+    source._rootNode = nullptr;
+    source._image = nullptr;
+
+}
+
+//Move Assignment
+ChatBot& ChatBot::operator=(ChatBot &&source)
+{
+    std::cout << "ChatBot Move Assignment Operator\n";
+
+    if (this == &source)
+        return *this;
+
+    delete _image;
+    _image = new wxBitmap();
+    _image = source._image;    
+    _chatLogic = source._chatLogic;
+    _rootNode = source._rootNode;
+
+
+    // Set to nullptr so the source data is unusable
+    source._chatLogic = nullptr;
+    source._rootNode = nullptr;
+    source._image = nullptr;
+
+    return *this;
+
+}
+
 ////
 //// EOF STUDENT CODE
 
