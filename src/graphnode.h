@@ -15,7 +15,7 @@ class GraphNode
 private:
     //// STUDENT CODE
     ////
-    
+
     // data handles (not owned)
     std::vector<GraphEdge *> _parentEdges; // edges to preceding nodes 
 
@@ -46,7 +46,6 @@ public:
     // proprietary functions
     void AddToken(std::string token); // add answers to list
     void AddEdgeToParentNode(GraphEdge *edge);
-    // void AddEdgeToChildNode(GraphEdge *edge);
     void AddEdgeToChildNode(std::unique_ptr<GraphEdge> edge);
 
     //// STUDENT CODE

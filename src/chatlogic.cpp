@@ -197,8 +197,6 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
     ChatBot chatBot("../images/chatbot.png");
 
     // Pass chatBot to ChatLogic
-    SetChatbotHandle(&chatBot);
-
     chatBot.SetChatLogicHandle(this);
 
     //Set root node in chatBot
