@@ -69,7 +69,7 @@ const ChatBot& ChatBot::operator=(const ChatBot &source)
 
     delete _image;    
     _image = new wxBitmap();
-    _image = source._image;
+    *_image = *source._image;
     _chatLogic = source._chatLogic;
     _rootNode = source._rootNode;
     _currentNode = source._currentNode;
@@ -104,7 +104,6 @@ ChatBot& ChatBot::operator=(ChatBot &&source)
     if (this == &source)
         return *this;
 
-    delete _image;
     _image = new wxBitmap();
     _image = source._image;    
     _chatLogic = source._chatLogic;
